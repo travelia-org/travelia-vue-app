@@ -1,0 +1,13 @@
+services:
+  travelia-vue-app:
+    container_name: travelia-vue-app
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3001:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
